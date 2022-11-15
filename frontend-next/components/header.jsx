@@ -1,31 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Header = () => {
+  const [isActive, setIsActive] = useState(false);
+
+  const handleClick = () => setIsActive((cur) => !cur);
+
   return (
-    <header className="header">
-      <nav className="flex flex-jc-sb flex-ai-c">
-        <a href="/" className="header__logo">
+    <header className="primary-header">
+      <div className="container">
+        <a href="#">
           <img src="images/logo.svg" alt="logo" />
         </a>
+        <nav className="primary-navigation">
+          <ul aria-label="primary" role="list" className="nav-list">
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Skills</a>
+            </li>
+            <li>
+              <a href="#">Blogs</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+        </nav>
 
-        <a href="#" className="header__menu hide-for-desktop">
-          <span></span>
-          <span></span>
-          <span></span>
-        </a>
-
-        <div className="header__links hide-for-mobile">
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
-          <a href="#">Blog</a>
-          <a href="#">Careers</a>
-        </div>
-
-        <a href="#" className="button header__cta hide-for-mobile">
-          Request Invite
-        </a>
-      </nav>
+        <button className="button">Get Started</button>
+      </div>
     </header>
   );
 };
