@@ -1,0 +1,46 @@
+/*===== HOME =====*/
+.home{
+    position: relative;
+    row-gap: 5rem;
+    padding: 4rem 0 5rem;
+
+    &__data{
+        align-self: center;
+    }
+    &__title{
+        font-size: var(--big-font-size);
+        margin-bottom: var(--mb-5);
+
+        &-color{
+            color: var(--first-color);
+        }
+    }
+    &__social{
+        display: flex;
+        flex-direction: column;
+        &-icon{
+            width: max-content;
+            margin-bottom: var(--mb-2);
+            font-size: 1.5rem;
+            color: var(--second-color);
+
+            &:hover{
+                color: var(--first-color);
+            }
+        }
+    }
+
+    &__img{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 260px;
+    }
+    &__blob{
+        fill: var(--first-color);
+
+        &-img{
+            width: 360px;
+        }
+    }
+}

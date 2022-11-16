@@ -6,53 +6,47 @@ const Header = () => {
   const handleClick = () => setIsActive((cur) => !cur);
 
   return (
-    <header className="header" id="header">
-      <nav className="nav container">
-        <a href="#" className="nav__logo">
-          Delivery
-        </a>
-        <div className={`nav__menu ${isActive && "show-menu"}`} id="nav-menu">
-          <ul
-            aria-label="primary"
-            role="list"
-            className="nav__list"
-            onClick={handleClick}
-          >
-            <li className="nav__item">
-              <a href="#" className="nav__link">
+    <header class="l-header">
+      <nav class="nav bd-grid">
+        <div>
+          <a href="#" class="nav__logo">
+            Marlon
+          </a>
+        </div>
+
+        <div class={`nav__menu ${isActive && "show"}`} id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link active">
                 Home
               </a>
             </li>
-            <li className="nav__item">
-              <a href="#" className="nav__link">
+            <li class="nav__item">
+              <a href="#about" class="nav__link">
                 About
               </a>
             </li>
-            <li className="nav__item">
-              <a href="#" className="nav__link">
+            <li class="nav__item">
+              <a href="#skills" class="nav__link">
                 Skills
               </a>
             </li>
-            <li className="nav__item">
-              <a href="#" className="nav__link">
-                Blogs
+            <li class="nav__item">
+              <a href="#work" class="nav__link">
+                Work
               </a>
             </li>
-            <li className="nav__item">
-              <a href="#" className="nav__link">
+            <li class="nav__item">
+              <a href="#contact" class="nav__link">
                 Contact
               </a>
             </li>
           </ul>
         </div>
 
-        <div className="nav__toggle" id="nav-toggle" onClick={handleClick}>
-          <i className="bx bx-grid-alt"></i>
+        <div class="nav__toggle" id="nav-toggle" onClick={handleClick}>
+          <i class="bx bx-menu"></i>
         </div>
-
-        <a href="#" className="button button__header">
-          Order Now
-        </a>
       </nav>
     </header>
   );
