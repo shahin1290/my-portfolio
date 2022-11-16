@@ -6,33 +6,54 @@ const Header = () => {
   const handleClick = () => setIsActive((cur) => !cur);
 
   return (
-    <header className="primary-header">
-      <div className="container">
-        <a href="#">
-          <img src="images/logo.svg" alt="logo" />
+    <header className="header" id="header">
+      <nav className="nav container">
+        <a href="#" className="nav__logo">
+          Delivery
         </a>
-        <nav className="primary-navigation">
-          <ul aria-label="primary" role="list" className="nav-list">
-            <li>
-              <a href="#">Home</a>
+        <div className={`nav__menu ${isActive && "show-menu"}`} id="nav-menu">
+          <ul
+            aria-label="primary"
+            role="list"
+            className="nav__list"
+            onClick={handleClick}
+          >
+            <li className="nav__item">
+              <a href="#" className="nav__link">
+                Home
+              </a>
             </li>
-            <li>
-              <a href="#">About</a>
+            <li className="nav__item">
+              <a href="#" className="nav__link">
+                About
+              </a>
             </li>
-            <li>
-              <a href="#">Skills</a>
+            <li className="nav__item">
+              <a href="#" className="nav__link">
+                Skills
+              </a>
             </li>
-            <li>
-              <a href="#">Blogs</a>
+            <li className="nav__item">
+              <a href="#" className="nav__link">
+                Blogs
+              </a>
             </li>
-            <li>
-              <a href="#">Contact</a>
+            <li className="nav__item">
+              <a href="#" className="nav__link">
+                Contact
+              </a>
             </li>
           </ul>
-        </nav>
+        </div>
 
-        <button className="button">Get Started</button>
-      </div>
+        <div className="nav__toggle" id="nav-toggle" onClick={handleClick}>
+          <i className="bx bx-grid-alt"></i>
+        </div>
+
+        <a href="#" className="button button__header">
+          Order Now
+        </a>
+      </nav>
     </header>
   );
 };
