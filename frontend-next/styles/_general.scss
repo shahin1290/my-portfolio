@@ -1,32 +1,37 @@
-.section-title {
-  position: relative;
-  font-size: var(--h2-font-size);
-  color: var(--first-color);
-  margin-top: var(--mb-2);
-  margin-bottom: var(--mb-4);
-  text-align: center;
+/*----------*----------*----------*----------*---------- Utility Classes */
 
-  &::after {
-    position: absolute;
-    content: "";
-    width: 64px;
-    height: 0.18rem;
-    left: 0;
-    right: 0;
-    margin: auto;
-    top: 2rem;
-    background-color: var(--first-color);
-  }
-}
-.section {
-  padding-top: 3rem;
-  padding-bottom: 2rem;
+/*----------*----------*----------* Section Padding */
+.section__padding {
+  padding: var(--padding-d-l-v) var(--padding-d-l-h);
 }
 
-/*===== LAYOUT =====*/
-.bd-grid {
-  max-width: 1024px;
+/*----------*----------*----------* Section Title */
+.section__title {
+  font-size: var(--font-size-d-sc);
+  font-weight: 900;
+}
+
+/*----------*----------*----------* Section Para */
+.section__para {
+  font-size: var(--font-size-st-sc);
+  color: var(--color-quaternary);
+}
+
+/*----------*----------*----------*----------*---------- Overall Layout */
+
+.container {
   display: grid;
-  margin-left: var(--mb-2);
-  margin-right: var(--mb-2);
+  grid-template-columns:
+    [container-start] 1fr [center-start] repeat(
+      10,
+      [col-start] minmax(min-content, 11rem) [col-end]
+    )
+    [center-end] 1fr [container-end];
+
+  grid-template-rows: repeat(9, min-content);
+  justify-content: center;
+}
+
+.overall-layout {
+  grid-column: container-start / container-end;
 }

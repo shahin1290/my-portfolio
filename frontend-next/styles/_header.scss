@@ -1,75 +1,43 @@
-.l-header{
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: var(--z-fixed);
-    background-color: #fff;
-    box-shadow: 0 1px 4px rgba(146,161,176,.15);
-}
-
-/*===== NAV =====*/
-.nav{
-    height: var(--header-height);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: var(--font-semi);
-
-    &__menu{
-        @media screen and (max-width: 767px){
-            position: fixed;
-            top: var(--header-height);
-            right: -100%;
-            width: 80%;
-            height: 100%;
-            padding: 2rem;
-            background-color: var(--second-color);
-            transition: .5s;
-        }
-    }
-    &__item{
-        margin-bottom: var(--mb-4);
-    }
-    &__link{
-        position: relative;
-        color: #fff;
-
-        &:hover{
-            position: relative;
-
-            &::after{
-                position: absolute;
-                content: '';
-                width: 100%;
-                height: 0.18rem;
-                left: 0;
-                top: 2rem;
-                background-color: var(--first-color);
-            }
-        }
-    }
-    &__logo{
-        color: var(--second-color);
-    }
-    &__toggle{
-        color: var(--second-color);
-        font-size: 1.5rem;
-        cursor: pointer;
-    }
-}
-/*Active menu*/
-.active::after{
+.header {
+  background-color: var(--color-secondary);
+  padding: var(--padding-d-m-v) var(--padding-d-l-h);
+  display: flex;
+  justify-content: space-between;
+  column-gap: 2rem;
+  position: relative;
+  &::after {
+    content: "";
     position: absolute;
-    content: '';
-    width: 100%;
-    height: 0.18rem;
+    bottom: -49.5rem;
     left: 0;
-    top: 2rem;
-    background-color: var(--first-color);
-}
+    height: 50rem;
+    width: 100%;
+    background-color: var(--color-secondary);
+    clip-path: ellipse(100% 55% at 48% 44%);
+    z-index: -1;
+  }
 
-/*=== Show menu ===*/
-.show{
-    right: 0;
+  &__logo {
+    font-size: var(--font-size-st-m);
+    color: var(--color-primary);
+  }
+
+  &__nav {
+    display: flex;
+    gap: 3rem;
+  }
+
+  &__nav--link {
+    font-size: var(--font-size-st-sc);
+    color: var(--color-quaternary);
+    transition: all 0.2s ease-in-out;
+  }
+
+  &__nav--link:first-child {
+    color: var(--color-primary);
+  }
+
+  &__nav--link:hover {
+    color: var(--color-primary);
+  }
 }
